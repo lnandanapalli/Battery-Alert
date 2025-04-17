@@ -1,8 +1,44 @@
-Monitors battery
+# Battery Monitoring System
 
-If low battery is detected an alert is created
+Minimal cross platform battery monitor script written in Python.  
+It beeps and pops up a small Tkinter window when your laptop battery drops below a user defined **low** threshold or rises above a **high** threshold while still plugged in.
 
-If the computer is plugged in even after reaching a threshold battery level an alert is created
+---
 
+## Requirements
 
-Low and High battery levels can be configured by entering low and high values when the script prompts for input
+-   Python 3.7 or newer
+-   Tkinter (bundled with standard CPython installs)
+-   `psutil` Python package
+
+Install the dependency:
+
+    pip install -r requirements.txt
+
+---
+
+## Usage
+
+Run the script and enter two integer thresholds:
+
+    python3 battery_monitor.py
+    Enter lowest battery percentage : 20
+    Enter highest battery percentage : 90
+
+-   Below **20 %** while on battery, beeps + shows Low battery window.
+-   Above **90 %** while still plugged in, beeps + shows Charged window.
+
+### Launchers
+
+-   Linux/macOS: make executable and run
+
+          chmod +x battery_monitor.sh
+          ./battery_monitor.sh
+
+-   Windows:
+
+          battery_monitor.bat
+
+Both wrappers invoke the Python script.
+
+---
